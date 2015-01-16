@@ -42,8 +42,8 @@ bool ChannelDao::insertObj(ChannelObjPtr obj)
 	}
 	if(!success)
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 
@@ -90,8 +90,8 @@ bool ChannelDao::updateObj(ChannelObjPtr obj)
 		success &= (errorCode == SQLITE_OK);
 		if(!success)
 		{
-			UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 	}
 
@@ -164,8 +164,8 @@ ChannelObjPtr ChannelDao::find(int uid)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);
@@ -207,8 +207,8 @@ ChannelObjPtr ChannelDao::findByDescription(std::string description)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);
@@ -253,8 +253,8 @@ std::map<int,ChannelARTptr> ChannelDao::findAll(int layerId)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);

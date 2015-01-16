@@ -40,8 +40,8 @@ bool WeightDao::insertObj(WeightObjPtr obj)
 
 	if(!success)
 	{
-		UERROR("insertObj DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("insertObj DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	//UDEBUG("Time for insert weight = %f s", timer.ticks());
@@ -91,8 +91,8 @@ bool WeightDao::updateObj(WeightObjPtr obj)
 
 		if(!success)
 		{
-			UERROR("updateObj DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("updateObj DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 	}
 
@@ -191,8 +191,8 @@ WeightObjPtr WeightDao::find(int uid)
 	}
 	else
 	{
-		UERROR("find DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("find DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);
@@ -245,8 +245,8 @@ std::map<int,WeightObjPtr> WeightDao::findAll(int layer, std::map<int,CategoryAR
 	}
 	else
 	{
-		UERROR("findAll DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("findAll DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);
@@ -292,8 +292,8 @@ WeightObjPtr WeightDao::findByConnection(CategoryARTptr downCategory,CategoryART
 	}
 	else
 	{
-		UERROR("find DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("find DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	errorCode = sqlite3_finalize(prepared_statement);

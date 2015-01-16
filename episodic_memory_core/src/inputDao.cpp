@@ -48,8 +48,8 @@ bool InputDao::insertObj(InputObjPtr obj)
 
 	if(!success)
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	return success;
@@ -95,8 +95,8 @@ bool InputDao::updateObj(InputObjPtr obj)
 		success &= (errorCode == SQLITE_OK);
 		if(!success)
 		{
-			UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 	}
 
@@ -166,8 +166,8 @@ InputObjPtr InputDao::find(int inputId)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 
@@ -210,8 +210,8 @@ InputObjPtr InputDao::findByDescription(std::string description)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 
@@ -254,8 +254,8 @@ std::map<int,CategoryARTptr> InputDao::findAll()
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 
@@ -302,8 +302,8 @@ std::map<int,CategoryARTptr> InputDao::findAllByChannel(boost::shared_ptr<Channe
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 

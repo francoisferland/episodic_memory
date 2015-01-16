@@ -2,7 +2,7 @@
 #define EPISODICMEMORYCORE_H_
 
 #include <sqlite3.h>
-#include <utilite/UtiLite.h>
+//#include <utilite/UtiLite.h>
 #include <boost/numeric/ublas/vector.hpp>
 #include "episodeLayer.h"
 #include "eventLayer.h"

@@ -1,6 +1,13 @@
 # Setup testing
 
-FIND_PACKAGE(GTest REQUIRED)
+FIND_PACKAGE(GTest)
+# NOTE: Using 'REQUIRED' with GTest looks for a static library that no longer
+# exists, functions are all defined in the header files.
+# CMake will still warn about the library not being found, but it can be safely
+# ignored.
+if (GTEST_INCLUDE_DIRS-NOT_FOUND)
+    message(SEND_ERROR "Could not find GTest headers, aborting.")
+endif (GTEST_INCLUDE_DIRS-NOT_FOUND)
 
 enable_testing(true)
 include_directories(${GTEST_INCLUDE_DIR})

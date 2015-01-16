@@ -157,19 +157,19 @@ std::vector<CategoryARTptr> EpisodeLayer::buildRecognizedEpisode(CategoryARTptr 
 void EpisodeLayer::displayBuiltEpisode(std::vector<CategoryARTptr> episode)
 {
 	if(episode.size() > 0)
-		UINFO("\n ---EPISODE --- \n");
+		ROS_INFO("\n ---EPISODE --- \n");
 	for(std::vector<CategoryARTptr>::iterator it = episode.begin() ; it!= episode.end() ; it++)
 	{
 		EventLayerPtr eventLayer = boost::dynamic_pointer_cast<EventLayer>(m_lowerLayer);
 		std::vector<CategoryARTptr> inputPattern = eventLayer->getInputPattern(*it);
-		UINFO("---Event---\n");
+		ROS_INFO("---Event---\n");
 		for(std::vector<CategoryARTptr>::iterator it2 = inputPattern.begin() ; it2 != inputPattern.end() ; it2++)
 		{
 			InputObjPtr input = boost::dynamic_pointer_cast<InputObj>(*it2);
-			UINFO("   %s",input->getDescription().c_str());
-			UINFO("\n");
+			ROS_INFO("   %s",input->getDescription().c_str());
+			ROS_INFO("\n");
 		}
-		UINFO("\n");
+		ROS_INFO("\n");
 	}
 }
 
@@ -251,17 +251,16 @@ void EpisodeLayer::notifyLearningModeChanged()
 
 void EpisodeLayer::printLayerInfo()
 {
-	UINFO("Display Episode Layer info");
-	ULogger::setPrintEndline(false);
+	ROS_INFO("Display Episode Layer info");
 	for(std::map<int,ChannelARTptr>::iterator it = m_mapChannel.begin(); it != m_mapChannel.end() ; it++)
 	{
 		//print Channel Description
-		UINFO("Channel %i : %s " , (*it).first , (*it).second->getDescription().c_str()) ;
-		UINFO(", relevance : %5.2f \r\n" , (*it).second->getRelevance() );
+		ROS_INFO("Channel %i : %s, relevance : %5.2f", 
+                 (*it).first,
+                 (*it).second->getDescription().c_str(),
+                 (*it).second->getRelevance());
 		//print input
 		(*it).second->printCategories();
-		UINFO("\r\n");
 	}
-	ULogger::setPrintEndline(true);
 }
 

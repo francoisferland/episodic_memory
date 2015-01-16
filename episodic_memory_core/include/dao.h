@@ -10,7 +10,7 @@
 
 #include <boost/thread.hpp>
 #include <sqlite3.h>
-#include <utilite/UtiLite.h>
+#include <ros/ros.h>
 
 /**
  * This generic class is use to interface with a database and a mapped object
@@ -32,8 +32,8 @@ public:
 		rc = sqlite3_exec(db, request.c_str(), 0, 0, 0);
 		if(rc != SQLITE_OK)
 		{
-			UERROR("DB error (rc=%d): %s", rc, sqlite3_errmsg(db));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("DB error (rc=%d): %s", rc, sqlite3_errmsg(db));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 	}
 	/**
@@ -107,8 +107,8 @@ protected:
 
 		if(!success)
 		{
-			UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 
 		return success;

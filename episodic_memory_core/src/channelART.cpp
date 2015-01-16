@@ -241,11 +241,11 @@ void ChannelART::printCategories()
 		for(std::map<int,boost::shared_ptr<CategoryART> >::iterator it = m_mapCategory.begin(); it != m_mapCategory.end() ; it++)
 		{
 			(*it).second->print();
-			UINFO("\r\n");
+			ROS_INFO("\r\n");
 		}
 	}
 	else
 	{
-		UINFO("no category\r\n ");
+		ROS_INFO("no category\r\n ");
 	}
 }

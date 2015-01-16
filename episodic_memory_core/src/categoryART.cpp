@@ -27,7 +27,7 @@ CategoryART::~CategoryART()
 
 void CategoryART::print()
 {
-	UINFO("    %i, Activation value : %5.4f" ,getUid() , getActivationValue());
+	ROS_INFO("    %i, Activation value : %5.4f" ,getUid() , getActivationValue());
 }
 
 void CategoryART::setActivatedTime()

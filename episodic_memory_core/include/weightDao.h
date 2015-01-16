@@ -10,7 +10,7 @@
 
 #include "dao.h"
 #include "weightObj.h"
-#include <utilite/UTimer.h>
+//#include <utilite/UTimer.h>
 
 class WeightDao;
 typedef boost::shared_ptr<WeightDao> WeightDaoPtr;

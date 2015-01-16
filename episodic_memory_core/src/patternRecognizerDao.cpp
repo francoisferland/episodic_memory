@@ -39,8 +39,8 @@ bool PatternRecognizerDao::insertObj(PatternRecognizerObjPtr obj)
 
 	if(!success)
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 	}
 
 	return success;
@@ -87,8 +87,8 @@ bool PatternRecognizerDao::updateObj(PatternRecognizerObjPtr obj)
 		success &= (errorCode == SQLITE_OK);
 		if(!success)
 		{
-			UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-			UERROR("The query is: %s",request.c_str());
+			ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+			ROS_ERROR("The query is: %s",request.c_str());
 		}
 	}
 
@@ -162,8 +162,8 @@ PatternRecognizerObjPtr PatternRecognizerDao::find(int inputId)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 
@@ -209,8 +209,8 @@ std::vector<PatternRecognizerObjPtr> PatternRecognizerDao::findAll(int layerId)
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 
@@ -257,8 +257,8 @@ std::map<int,CategoryARTptr> PatternRecognizerDao::findAllByChannel(boost::share
 	}
 	else
 	{
-		UERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
-		UERROR("The query is: %s",request.c_str());
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
 
 	}
 

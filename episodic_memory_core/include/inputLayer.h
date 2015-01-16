@@ -2,8 +2,8 @@
 #define INPUTLAYER_H_
 
 #include <boost/numeric/ublas/vector.hpp>
-#include <utilite/UtiLite.h>
-#include <utilite/UTimer.h>
+//#include <utilite/UtiLite.h>
+//#include <utilite/UTimer.h>
 #include "channelART.h"
 #include "inputObj.h"
 #include "layerART.h"

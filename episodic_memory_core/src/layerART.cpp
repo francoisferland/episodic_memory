@@ -485,7 +485,7 @@ void LayerART::notifyNewChannel(ChannelARTptr channel)
 	}
 	else
 	{
-		UWARN("Channel not created in the core before notifying the view\n");
+		ROS_WARN("Channel not created in the core before notifying the view\n");
 	}
 }
 
@@ -498,7 +498,7 @@ void LayerART::notifyNewCategory(InputObjPtr input)
 	}
 	else
 	{
-		UWARN("Input not created in the core before notifying the view\n");
+		ROS_WARN("Input not created in the core before notifying the view\n");
 	}
 }
 
@@ -511,7 +511,7 @@ void LayerART::notifyNewCategory(PatternRecognizerObjPtr patternRecognizer)
 	}
 	else
 	{
-		UWARN("PAtternRecognizer not created in the core before notifying the view\n");
+		ROS_WARN("PAtternRecognizer not created in the core before notifying the view\n");
 	}
 }
 

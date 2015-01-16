@@ -27,7 +27,7 @@ bool EpisodicMemoryCore::initialize()
 	//create connection to the database
 	int returnValue = sqlite3_open(*m_databasePath, &db);
 	if( returnValue ){
-		UERROR( "Can't open database: %s" , sqlite3_errmsg(db));
+		ROS_ERROR( "Can't open database: %s" , sqlite3_errmsg(db));
 		sqlite3_close(db);
 		success = false;
 	}
@@ -265,7 +265,7 @@ void EpisodicMemoryCore::setVigilance(int indexCategory, float value)
 	}
 	else
 	{
-		UWARN("Can't find the category to set the vigilance %i", indexCategory);
+		ROS_WARN("Can't find the category to set the vigilance %i", indexCategory);
 	}
 }
 
@@ -288,7 +288,7 @@ void EpisodicMemoryCore::setLearningRate(int indexCategory, float value)
 	}
 	else
 	{
-		UWARN("Can't find the category to set the learningRate");
+		ROS_WARN("Can't find the category to set the learningRate");
 	}
 }
 
@@ -314,7 +314,7 @@ void EpisodicMemoryCore::setRelevance(int indexChannel, float value)
 		m_episodeLayer->updateChannelDatabase(channel);
 	}
 	else
-		UINFO("Can't change relevance, channel %i doesnt exist in the core",indexChannel);
+		ROS_INFO("Can't change relevance, channel %i doesnt exist in the core",indexChannel);
 }
 
 void EpisodicMemoryCore::printNetwork()

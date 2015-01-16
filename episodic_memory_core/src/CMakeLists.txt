@@ -55,7 +55,7 @@ QT4_WRAP_CPP(EM_CORE_SRC_CXX ${QT_EM_CORE_HEADERS} OPTIONS -DBOOST_TT_HAS_OPERAT
 
 
 IF(UNIX)
-    rosbuild_add_library (EM_CORE    SHARED                 
+    add_library (EM_CORE    SHARED                 
             ${EM_CORE_SRC_CXX}
             )
 ELSE()
@@ -70,6 +70,7 @@ target_link_libraries ( EM_CORE
                         ${Boost_LIBRARIES}
                         ${SQLITE_LIBRARY}
                         ${UTILITE_LIBRARIES}
+                        ${catkin_LIBRARIES}
                         )
                         
 INSTALL (TARGETS EM_CORE DESTINATION ${PROJECT_SOURCE_DIR}/libs)
