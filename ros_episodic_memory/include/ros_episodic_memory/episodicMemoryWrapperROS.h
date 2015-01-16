@@ -15,7 +15,7 @@
 #include "ros_episodic_memory/setVigilanceParameter.h"
 #include "ros_episodic_memory/setLearningRateParameter.h"
 #include "ros_episodic_memory/setRelevanceParameter.h"
-#include "ros_episodic_memory/setLearningMode.h"
+//#include "ros_episodic_memory/setLearningMode.h"
 #include "ros_episodic_memory/inputData.h"
 #include "ros_episodic_memory/learningMode.h"
 #include "ros_episodic_memory/recalledEpisode.h"
@@ -55,8 +55,8 @@ class EpisodicMemoryWrapperROS : public QObject
 			ros_episodic_memory::setLearningRateParameter::Response &response);
 	bool relevanceService(ros_episodic_memory::setRelevanceParameter::Request &req,
 				ros_episodic_memory::setRelevanceParameter::Response &response);
-	bool learningModeService(ros_episodic_memory::setLearningMode::Request &req,
-					ros_episodic_memory::setLearningMode::Response &response);
+//	bool learningModeService(ros_episodic_memory::setLearningMode::Request &req,
+//					ros_episodic_memory::setLearningMode::Response &response);
 
 	bool clearActivationService(std_srvs::Empty::Request& request, std_srvs::Empty::Response& response);
 

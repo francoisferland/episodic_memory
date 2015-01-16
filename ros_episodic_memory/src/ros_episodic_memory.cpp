@@ -2,7 +2,7 @@
 #include "std_msgs/String.h"
 #include <sstream>
 
-#include <utilite/UtiLite.h>
+//#include <utilite/UtiLite.h>
 #include <boost/thread.hpp>
 
 #include <config.h>
@@ -67,16 +67,16 @@ int main(int argc, char **argv)
 	ros::NodeHandle n;
 
 	// kTypeFile or kTypeNoLog (nothing is logged).
-	ULogger::setType(ULogger::kTypeConsole);
+	// ULogger::setType(ULogger::kTypeConsole);
 	// Set the logger severity level (kDebug, kInfo, kWarning, kError).
 	// All log entries under the severity level are not logged. Here,
 	// only debug messages are not logged.
-	ULogger::setLevel(ULogger::kWarning);
-	ULogger::setPrintWhere(false);
-	ULogger::setPrintTime(false);
-	ULogger::setPrintLevel(false);
-	ULogger::setPrintEndline(false);
-	ULogger::setPrintColored(true);
+	//ULogger::setLevel(ULogger::kWarning);
+	//ULogger::setPrintWhere(false);
+	//ULogger::setPrintTime(false);
+	//ULogger::setPrintLevel(false);
+	//ULogger::setPrintEndline(false);
+	//ULogger::setPrintColored(true);
 
 
 	//start episodicMemory-core
