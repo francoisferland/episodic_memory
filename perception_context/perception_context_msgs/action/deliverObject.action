@@ -1,0 +1,10 @@
+#goal definition
+string person
+float32 objectId
+---
+#result
+
+---
+#feedback
+int32 code
+string arg

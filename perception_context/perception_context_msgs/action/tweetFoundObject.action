@@ -1,0 +1,17 @@
+#goal definition
+float32 object_id
+---
+#result
+float32 pt1_x
+float32 pt1_y
+float32 pt2_x
+float32 pt2_y
+float32 pt3_x
+float32 pt3_y
+float32 pt4_x
+float32 pt4_y
+
+---
+#feedback
+int32 code
+string arg
