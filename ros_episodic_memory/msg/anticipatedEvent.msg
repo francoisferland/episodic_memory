@@ -1,0 +1,4 @@
+int32 index
+float32 newVigilance
+float32 newLearningRate
+bool anticipated

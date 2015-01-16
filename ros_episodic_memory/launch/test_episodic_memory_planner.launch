@@ -1,0 +1,18 @@
+<launch>
+	
+	<node name="stm" pkg="short_term_memory" type="shortTermMemory" >
+		<!--<remap from="person_identified" to="stm/person_identified"/>
+		<remap from="objects" to="stm/objects"/>
+		<remap from="location_label" to="stm/location_label"/>
+		<remap from="events" to="stm/events"/>-->
+	</node>
+	
+	<node name="episodic_memory" pkg="ros_episodic_memory" type="ros_episodic_memory" output="screen">
+  		<remap from="/episodic_memory/stm_content" to="/stm/stm_content"/>
+  	</node>
+  	
+  	<node name="episodic_memory_viz" pkg="ros_episodic_memory_viz" type="ros_episodic_memory_viz"/>
+  	
+  	<node name="episodic_memory_planner" pkg="ros_episodic_memory" type="episodic_memory_planner" output="screen"/>
+  	
+</launch>

@@ -1,0 +1,8 @@
+<launch>
+  <node name="episodic_memory" pkg="ros_episodic_memory" type="ros_episodic_memory" output="screen">
+  	<remap from="/episodic_memory/stm_content" to="/stm/stm_content"/>
+  </node>
+  
+  <node name="episodic_memory_viz" pkg="ros_episodic_memory_viz" type="ros_episodic_memory_viz" output="screen"/>
+  
+</launch>

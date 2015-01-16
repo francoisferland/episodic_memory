@@ -1,0 +1,14 @@
+<launch>
+  
+<!-- <group ns="em"> -->
+	  <node name="episodic_memory_viz" pkg="ros_episodic_memory_viz" type="ros_episodic_memory_viz" output="screen">
+<!--	  	<remap from="/em/new_category" to="/new_category"/>
+	  	<remap from="/em/updated_weight" to="/updated_weight"/>
+	  	<remap from="/em/category_activation" to="/category_activation"/> 
+	  	<remap from="/em/new_channel" to="/new_channel"/> 
+        <remap from="/em/recalled_episode" to="/recalled_episode"/>
+		<remap from="/em/anticipated_event" to="/anticipated_event"/>
+-->
+	  </node>
+<!-- </group> --> 
+</launch>

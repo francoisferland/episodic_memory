@@ -1,0 +1,20 @@
+<package>
+  <description brief="ros_episodic_memory_viz">
+
+     ros_episodic_memory_viz
+
+  </description>
+  <author>Francis Leconte</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/ros_episodic_memory_viz</url>
+  <depend package="ros_episodic_memory"/>
+  <depend package="episodic_memory_viz"/>
+  
+  <export>
+    <rosdoc config="rosdoc.yaml" />
+  </export>
+
+</package>
+
+

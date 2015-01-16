@@ -1,0 +1,9 @@
+// the configured options and settings for Tutorial
+#ifndef episodicMemoryCore_VERSION_MAJOR
+#define episodicMemoryCore_VERSION_MAJOR @episodicMemoryCore_VERSION_MAJOR@
+#endif
+#ifndef episodicMemoryCore_VERSION_MINOR
+#define episodicMemoryCore_VERSION_MINOR @episodicMemoryCore_VERSION_MINOR@
+#endif
+#cmakedefine EPISODIC_MEMORY_DATABASE_PATH "@EPISODIC_MEMORY_DATABASE_PATH@"
+#cmakedefine EPISODIC_MEMORY_TEST_DATABASE_PATH "@EPISODIC_MEMORY_TEST_DATABASE_PATH@"
