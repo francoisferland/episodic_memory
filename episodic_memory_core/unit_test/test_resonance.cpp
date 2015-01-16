@@ -12,6 +12,7 @@ class EpisodicMemoryResonance : public testing::Test
 protected:
 	void SetUp() {
 
+        ros::Time::init();
 		const char* databasePath = EPISODIC_MEMORY_TEST_DATABASE_PATH;
 		e = EpisodicMemoryCorePtr(new EpisodicMemoryCore(&databasePath));
 		e->initialize() ;
