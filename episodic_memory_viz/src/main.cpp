@@ -66,17 +66,6 @@ void connectQt(EpisodicMemoryCorePtr emPtr, NetworkVisualizer * viz)
 
 int main(int argc, char *argv[])
 {
-	ULogger::setType(ULogger::kTypeConsole);
-	// Set the logger severity level (kDebug, kInfo, kWarning, kError).
-	// All log entries under the severity level are not logged. Here,
-	// only debug messages are not logged.
-	ULogger::setLevel(ULogger::kInfo);
-	ULogger::setPrintWhere(false);
-	ULogger::setPrintTime(false);
-	ULogger::setPrintLevel(false);
-	ULogger::setPrintEndline(true);
-	ULogger::setPrintColored(false);
-
 	const char* databasePath = EPISODIC_MEMORY_DATABASE_PATH;
 
 	EpisodicMemoryCorePtr ep = EpisodicMemoryCorePtr(new EpisodicMemoryCore(&databasePath));

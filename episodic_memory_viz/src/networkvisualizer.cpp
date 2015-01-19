@@ -56,7 +56,7 @@ void NetworkVisualizer::joinBackgroundThread()
 
 void NetworkVisualizer::processBufferedItem()
 {
-	UINFO("Start thread");
+	ROS_INFO("Start thread");
 	while(backgroundThread)
 	{
 		tryBufferChannel();
@@ -66,7 +66,7 @@ void NetworkVisualizer::processBufferedItem()
 		tryBufferAnticipatedEvent();
 		boost::this_thread::sleep(boost::posix_time::milliseconds(1));
 	}
-	UINFO("end thread");
+	ROS_INFO("end thread");
 }
 
 void NetworkVisualizer::onMenuNewInput()
@@ -249,7 +249,7 @@ void NetworkVisualizer::onMenuNewInput()
 void NetworkVisualizer::onMenuResetNetwork()
 {
 	//clear view and clear database
-	UINFO("On menu reset network");
+	ROS_INFO("On menu reset network");
 	widget->clear();
 	emit resetNetworkSignal();
 }
@@ -257,7 +257,7 @@ void NetworkVisualizer::onMenuResetNetwork()
 void NetworkVisualizer::onClearActivationButton()
 {
 	emit clearActivationSignal();
-	UINFO("Clear Activation");
+	ROS_INFO("Clear Activation");
 	widget->clearAllActivation();
 }
 
@@ -284,7 +284,7 @@ bool NetworkVisualizer::onNewChannel(int channelId, QString description,float re
 {
 	GuiChannelPtr bufChannel = GuiChannelPtr(new GuiChannel(channelId,description,relevance,layer));
 
-	UINFO("received new channel %i %s %5.2f %i",channelId,description.toStdString().c_str(),relevance,layer);
+	ROS_INFO("received new channel %i %s %5.2f %i",channelId,description.toStdString().c_str(),relevance,layer);
 	while(!widget->tryLockChannel())
 		boost::this_thread::sleep(boost::posix_time::milliseconds(2));
 	bufferChannel.push(bufChannel);
@@ -295,7 +295,7 @@ bool NetworkVisualizer::onNewChannel(int channelId, QString description,float re
 bool NetworkVisualizer::onNewCategory(int index, int channelId, QString description, float vigilance, float learningRate, int layerId)
 {
 	GuiCategoryPtr bufCategory = GuiCategoryPtr(new GuiCategory(index, channelId,description,vigilance,learningRate,layerId));
-	UINFO("new category %i %s v=%5.2f",index,description.toStdString().c_str(),vigilance);
+	ROS_INFO("new category %i %s v=%5.2f",index,description.toStdString().c_str(),vigilance);
 	while(!widget->tryLockCategory())
 		boost::this_thread::sleep(boost::posix_time::milliseconds(2));
 	bufferCategory.push(bufCategory);
@@ -305,7 +305,7 @@ bool NetworkVisualizer::onNewCategory(int index, int channelId, QString descript
 
 bool NetworkVisualizer::onUpdateWeight(int id, int indexTopCategory, int indexBottomLayer, int idLayer, float value)
 {
-	UINFO("updatedWeight %i between %i and %i",id, indexTopCategory,indexBottomLayer);
+	ROS_INFO("updatedWeight %i between %i and %i",id, indexTopCategory,indexBottomLayer);
 	GuiWeightPtr bufWeight = GuiWeightPtr(new GuiWeight(id, indexTopCategory,indexBottomLayer,idLayer,value));
 	while(!widget->tryLockWeight())
 		boost::this_thread::sleep(boost::posix_time::milliseconds(2));

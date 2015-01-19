@@ -189,7 +189,7 @@ void GraphWidget::renderChannel(QPainter * painter, int offset, int width, GuiCh
 
 	if(!channel)
 	{
-		UWARN("channel does not exist");
+		ROS_WARN("channel does not exist");
 		return;
 	}
 	double relevance = channel->getRelevance();
@@ -323,7 +323,7 @@ void GraphWidget::renderNode(int posX, int posY, int idNumber, int layer)
 
 	if(!node)
 	{
-		UERROR("Can't render node id %i, please close application",idNumber);
+		ROS_ERROR("Can't render node id %i, please close application",idNumber);
 		return;
 	}
 
@@ -352,7 +352,7 @@ bool GraphWidget::addCategory(GuiCategoryPtr category)
 
 		if(mapGuiCategory.count(category->getIndex()))
 		{
-			UWARN("Category %i already exist", category->getIndex());
+			ROS_WARN("Category %i already exist", category->getIndex());
 		}
 
 		switch(category->getLayerId())
@@ -415,7 +415,7 @@ bool GraphWidget::addChannel(GuiChannelPtr channel)
 
 	if(mapGuiChannel.count(channel->getChannelId()))
 	{
-		UWARN("channel id already exist %i , %s", channel->getChannelId(), channel->getDescription().toStdString().c_str());
+		ROS_WARN("channel id already exist %i , %s", channel->getChannelId(), channel->getDescription().toStdString().c_str());
 	}
 	else
 	{
@@ -483,7 +483,7 @@ bool GraphWidget::updateEdge(GuiWeightPtr weight)
 	if(!weight)
 	{
 		return false;
-		UINFO("Error weight");
+		ROS_INFO("Error weight");
 	}
 
 	std::map<int, NodePtr>  listNodeUpper;
@@ -536,12 +536,12 @@ bool GraphWidget::updateEdge(GuiWeightPtr weight)
 		}
 		else
 		{
-			UINFO("skip complement node %i",weight->getId());
+			ROS_INFO("skip complement node %i",weight->getId());
 		}
 	}
 	else
 	{
-		UWARN("The two nodes to connect does not exist up%i down%i",weight->getIndexTopCategory(),weight->getIndexBottomLayer());
+		ROS_WARN("The two nodes to connect does not exist up%i down%i",weight->getIndexTopCategory(),weight->getIndexBottomLayer());
 		success = false;
 	}
 
@@ -566,7 +566,7 @@ bool GraphWidget::updateActivationValue(int index, float activationValue, int la
 	}
 	if(listNode.count(index) == 0)
 	{
-		UWARN("The neuron to activate does not exist in the view. Layer %i, index %i",layer,index);
+		ROS_WARN("The neuron to activate does not exist in the view. Layer %i, index %i",layer,index);
 		return false;
 	}
 
@@ -620,7 +620,7 @@ bool GraphWidget::updateAnticipatedEvent(int index, float newVigilance, float ne
 		//listNodeEventLayer[index]->update();
 	}
 	else
-		UWARN("can't find anticipated node %i",index);
+		ROS_WARN("can't find anticipated node %i",index);
 
 	return success;
 }
