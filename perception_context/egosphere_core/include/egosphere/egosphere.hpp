@@ -2,6 +2,7 @@
 #define _EGOSPHERE_HPP_
 
 #include <map>
+#define BOOST_SIGNALS_NO_DEPRECATION_WARNING
 #include <boost/signals.hpp>
 
 #include "information.hpp"
