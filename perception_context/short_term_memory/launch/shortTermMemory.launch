@@ -1,0 +1,27 @@
+<launch>
+	<arg name="image" default="/openni/rgb/image_rect_color"/>
+	<arg name="display" default="true"/>
+
+	<!-- launch file for face recognition, we suppose that the kinect node is already launched -->
+	<include file="$(find perception_algorithm)/launch/people_recognition.launch">
+		<arg name="image" value="$(arg image)"/>
+		<arg name="display" value="$(arg display)"/>
+	</include>	
+	
+	<!-- launch file for location detector -->
+	<include file="$(find perception_algorithm)/launch/locationDetector.launch">
+		<arg name="map" value="map_rdc.yaml"/>
+		<arg name="room" value="room_map_rdc.xml"/>
+	</include>
+	
+	<!-- launch file for the object detector -->
+	<include file="$(find perception_algorithm)/launch/find_object.launch">
+		<arg name="image" value="$(arg image)"/>
+		<arg name="gui" value="$(arg display)"/>
+	</include>	
+	
+	<node name="stm" pkg="short_term_memory" type="shortTermMemory" output="screen">
+		<rosparam command="load" file="$(find short_term_memory)/config/config_stm.yaml"/>
+	</node>
+	
+</launch>

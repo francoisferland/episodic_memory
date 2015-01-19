@@ -1,0 +1,21 @@
+stmPeople: 
+  - channel:
+    - person: 10
+  - duration: 30
+stmObjects: 
+  - channel: 
+    - object: 10
+  - duration: 30
+stmLocation: 
+  - channel: 
+    - location: 10
+    - locationSection: 0
+  - duration: 600
+stmEmotions: 
+  - channel: 
+    - emotion: 0
+  - duration: 15
+stmDesires: 
+  - channel: 
+    - action: 9
+  - duration: 3
