@@ -85,7 +85,7 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-#  LIBRARIES egosphere_ros
+  LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS roscpp egosphere_core
 #  DEPENDS system_lib
 )
