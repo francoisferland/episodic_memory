@@ -1,0 +1,3 @@
+<launch>
+	<test test-name="test_basic_node" pkg="egosphere_ros" type="test_basic_node"/>
+</launch>
