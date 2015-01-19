@@ -10,7 +10,6 @@
 #include <ros/ros.h>
 #include <ros/time.h>
 #include <boost/thread.hpp>
-#include <utilite/UtiLite.h>
 #include <ros_networkvisualizer.h>
 #include <signal.h>
 
@@ -21,14 +20,6 @@ void my_handler(int s){
 
 int main(int argc, char **argv)
 {
-	ULogger::setType(ULogger::kTypeConsole);
-	ULogger::setLevel(ULogger::kInfo);
-	ULogger::setPrintWhere(false);
-	ULogger::setPrintTime(false);
-	ULogger::setPrintLevel(false);
-	ULogger::setPrintEndline(true);
-	ULogger::setPrintColored(false);
-
 	MyApp app(argc, argv);
 
 	ros::init(argc,argv,"ros_episodic_memory_viz");

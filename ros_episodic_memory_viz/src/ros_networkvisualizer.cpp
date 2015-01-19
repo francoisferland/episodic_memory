@@ -54,7 +54,7 @@ void ROS_NetworkVisualizer::newChannelSubscriber(const ros_episodic_memory::newC
 
 void ROS_NetworkVisualizer::anticipatedEventSubscriber(const ros_episodic_memory::anticipatedEvent& message)
 {
-	UINFO("Received anticipated event %i",message.index);
+	ROS_INFO("Received anticipated event %i",message.index);
 	onAnticipatedEvent(message.index, message.newVigilance, message.newLearningRate, message.anticipated);
 }
 
