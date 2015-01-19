@@ -1,1 +1,5 @@
 episodic_memory_core/database/*
+        
+build/
+libs/
+config.h
