@@ -144,6 +144,7 @@ add_dependencies(episodic_memory_planner hbba_msgs_generate_messages_cpp)
 add_library(em_planner
     ${EPISODIC_MEMORY_PLANNER}
 )
+add_dependencies(em_planner ros_episodic_memory_generate_messages_cpp)
 
 target_link_libraries(episodic_memory_planner
                       EM_CORE
