@@ -1,7 +1,6 @@
 <launch>
 	
-	<node name="stm" pkg="short_term_memory" type="shortTermMemory"
-        launch-prefix="xterm -e gdb --args">
+	<node name="stm" pkg="short_term_memory" type="shortTermMemory">
 		<!--<remap from="person_identified" to="stm/person_identified"/>
 		<remap from="objects" to="stm/objects"/>
 		<remap from="location_label" to="stm/location_label"/>

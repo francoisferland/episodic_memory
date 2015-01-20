@@ -27,7 +27,7 @@ bool EpisodicMemoryCore::initialize()
 	//create connection to the database
 	int returnValue = sqlite3_open(*m_databasePath, &db);
 	if( returnValue ){
-		ROS_ERROR( "Can't open database: %s" , sqlite3_errmsg(db));
+		ROS_ERROR( "Can't open database in '%s': %s" , *m_databasePath, sqlite3_errmsg(db));
 		sqlite3_close(db);
 		success = false;
 	}
