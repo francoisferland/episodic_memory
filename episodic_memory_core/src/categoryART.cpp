@@ -132,5 +132,6 @@ float CategoryART::getMinimumVigilance(int & nbActiveInput)
 
 	//minimum vigilance is a little bit bigger than the smallest activated category,
 	//so the activation of the first category only wont provoke a recognition
-	return minVigilance * 1.01;
+    // DISABLE THIS:
+	return minVigilance; // * 1.01;
 }
