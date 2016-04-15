@@ -7,7 +7,7 @@
 
 #include <ros/ros.h>
 #include <std_msgs/String.h>
-#include <iw/events_filter.hpp>
+#include <iw_tools/events_filter.hpp>
 #include "stmInterface.hpp"
 
 using namespace egosphere_ros;
@@ -31,11 +31,11 @@ private:
 	//void timerCB(const ros::TimerEvent&);
 	void expireDesire(std::string desire);
 
-	iw::EventsFilter * eventGoToFilter_;
-	iw::EventsFilter * eventWanderFilter_;
-	iw::EventsFilter * eventTeleopFilter_;
-	iw::EventsFilter * eventGraspFilter_;
-	iw::EventsFilter * eventDeliverFilter_;
+	iw_tools::EventsFilter * eventGoToFilter_;
+	iw_tools::EventsFilter * eventWanderFilter_;
+	iw_tools::EventsFilter * eventTeleopFilter_;
+	iw_tools::EventsFilter * eventGraspFilter_;
+	iw_tools::EventsFilter * eventDeliverFilter_;
 
 	std::map<std::string,bool> exploitedDesires;
 

@@ -8,19 +8,19 @@
 
 StmDesires::StmDesires(EgosPtr egos, ros::NodeHandle* nh, int duration):StmInterface(egos)
 {
-	eventGoToFilter_ = new iw::EventsFilter(*nh,"goto_EM_scenario");
+	eventGoToFilter_ = new iw_tools::EventsFilter(*nh,"goto_EM_scenario");
 	eventGoToFilter_->allEventsCB(&StmDesires::gotoAllEventCallBack, this);
 
-	eventWanderFilter_ = new iw::EventsFilter(*nh,"wander_EM_scenario");
+	eventWanderFilter_ = new iw_tools::EventsFilter(*nh,"wander_EM_scenario");
 	eventWanderFilter_->allEventsCB(&StmDesires::wanderAllEventCallBack, this);
 
-	eventTeleopFilter_ = new iw::EventsFilter(*nh,"irl1_teleop");
+	eventTeleopFilter_ = new iw_tools::EventsFilter(*nh,"irl1_teleop");
 	eventTeleopFilter_->allEventsCB(&StmDesires::teleopAllEventCallBack, this);
 
-	eventGraspFilter_ = new iw::EventsFilter(*nh,"object_grasp");
+	eventGraspFilter_ = new iw_tools::EventsFilter(*nh,"object_grasp");
 	eventGraspFilter_->allEventsCB(&StmDesires::graspAllEventCallBack, this);
 
-	eventDeliverFilter_ = new iw::EventsFilter(*nh,"object_deliver");
+	eventDeliverFilter_ = new iw_tools::EventsFilter(*nh,"object_deliver");
 	eventDeliverFilter_->allEventsCB(&StmDesires::deliverAllEventCallBack, this);
 
 	setDuration(duration);
