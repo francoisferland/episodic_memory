@@ -3,6 +3,35 @@
 
 ChannelDao::ChannelDao(sqlite3* db) : Dao<ChannelObj>(db,"channel")
 {
+	bool success = true;
+	sqlite3_stmt* prepared_statement;
+    const char* unusedStatement;
+	int errorCode = 0;
+
+    std::string request =
+        "create table if not exists channel "
+        "(uid INTEGER PRIMARY KEY,"
+        " layerId smallint,"
+        " relevance double,"
+        " indexChannel smallint,"
+        " description varchar(100))";
+
+	errorCode = sqlite3_prepare_v2(getDbPtr(), request.c_str(), -1, &prepared_statement, &unusedStatement);
+
+	success &= (errorCode == SQLITE_OK);
+	if(success)
+	{
+		errorCode = sqlite3_step(prepared_statement);
+	}
+	success &= (errorCode == SQLITE_DONE);
+
+	sqlite3_finalize(prepared_statement);
+
+	if(!success)
+	{
+		ROS_ERROR("DB error (%d): %s", errorCode, sqlite3_errmsg(getDbPtr()));
+		ROS_ERROR("The query is: %s",request.c_str());
+	}
 }
 
 ChannelDao::~ChannelDao()
