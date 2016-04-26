@@ -1,4 +1,4 @@
-episodic_memory_core/database/*
+episodic_memory_core/database/*.db
         
 build/
 libs/
