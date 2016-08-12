@@ -73,6 +73,8 @@ add_executable(ros_episodic_memory_viz
 	    ${ROS_EPISODIC_MEMORY_VIZ_CXX} 
 	    )
 	    
+add_dependencies(ros_episodic_memory_viz ${hbba_msgs_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
 SET(LIBRARIES 	
     ${catkin_LIBRARIES}
 )
