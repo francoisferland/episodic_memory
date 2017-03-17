@@ -44,6 +44,8 @@
   <run_depend>episodic_memory_core</run_depend>
   <build_depend>hbba_msgs</build_depend>
   <run_depend>hbba_msgs</run_depend>
+  <build_depend>perception_context_msgs</build_depend>
+  <run_depend>perception_context_msgs</run_depend>
   <build_depend>roscpp</build_depend>
   <run_depend>roscpp</run_depend>
 

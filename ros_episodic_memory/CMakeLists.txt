@@ -5,9 +5,10 @@ project(ros_episodic_memory)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  message_generation
   episodic_memory_core
+  message_generation
   hbba_msgs
+  perception_context_msgs
   roscpp
 )
 
@@ -15,6 +16,7 @@ FIND_PACKAGE( Boost 1.46 COMPONENTS thread date_time REQUIRED )
 FIND_PACKAGE( Qt4 REQUIRED )
 #FIND_PACKAGE( UtiLite REQUIRED )
 FIND_LIBRARY( SQLITE_LIBRARY sqlite3 )
+FIND_LIBRARY( EM_CORE em_core )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -147,14 +149,12 @@ add_library(em_planner
 add_dependencies(em_planner ros_episodic_memory_generate_messages_cpp)
 
 target_link_libraries(episodic_memory_planner
-                      EM_CORE
                       ${catkin_LIBRARIES}
 )
 target_link_libraries(ros_episodic_memory 		
-                      EM_CORE
+                      QtCore
                       ${catkin_LIBRARIES}
 )
-
 
 ## Declare a cpp library
 # add_library(test

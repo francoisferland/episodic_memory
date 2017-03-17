@@ -86,7 +86,7 @@ FIND_LIBRARY( SQLITE_LIBRARY sqlite3 )
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES EpisodicMemoryVizLib 
-  CATKIN_DEPENDS roscpp
+  CATKIN_DEPENDS roscpp episodic_memory_core
 #  DEPENDS system_lib
 )
 
@@ -102,9 +102,9 @@ include_directories(
 )
 
 SET(EPISODIC_MEMORY_VIZ_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
-SET( EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/bin )
-SET( LIBRARY_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/libs )
-SET ( EPISODIC_MEMORY_PATH ${PROJECT_SOURCE_DIR}/../episodic_memory_core )
+#SET( EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/bin )
+#SET( LIBRARY_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/libs )
+#SET ( EPISODIC_MEMORY_PATH ${PROJECT_SOURCE_DIR}/../episodic_memory_core )
 
 INCLUDE_DIRECTORIES(
                     ${Boost_INCLUDE_DIR} 
@@ -151,12 +151,12 @@ TARGET_LINK_LIBRARIES(EpisodicMemoryViz
                 ${LIBRARIES}
 )
               
-ADD_LIBRARY(EpisodicMemoryVizLib SHARED
+ADD_LIBRARY(EpisodicMemoryVizLib
 			    ${EPISODIC_MEMORY_VIZ_SRC_CXX} 
 )    
 TARGET_LINK_LIBRARIES(EpisodicMemoryVizLib
                 ${LIBRARIES}
 )
               
-SET_TARGET_PROPERTIES(EpisodicMemoryVizLib 
-      PROPERTIES OUTPUT_NAME EpisodicMemoryViz)
+#SET_TARGET_PROPERTIES(EpisodicMemoryVizLib 
+#      PROPERTIES OUTPUT_NAME EpisodicMemoryViz)

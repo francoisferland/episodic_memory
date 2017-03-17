@@ -15,6 +15,7 @@ FIND_PACKAGE( Boost 1.46 COMPONENTS thread date_time REQUIRED )
 FIND_PACKAGE( Qt4 REQUIRED )
 #FIND_PACKAGE( UtiLite REQUIRED )
 FIND_LIBRARY( SQLITE_LIBRARY sqlite3 )
+FIND_LIBRARY( EM_VIZ EpisodicMemoryVizLib )
 
 ## System dependencies are found with CMake's conventions
 # find_package(Boost REQUIRED COMPONENTS system)
@@ -79,9 +80,10 @@ SET(LIBRARIES
     ${catkin_LIBRARIES}
 )
 
-TARGET_LINK_LIBRARIES(  ros_episodic_memory_viz	
-                        ${LIBRARIES}	
-                      )
+TARGET_LINK_LIBRARIES(ros_episodic_memory_viz	
+    Qt4::QtGui
+    ${LIBRARIES}	
+)
 
 ## Declare a cpp library
 # add_library(test

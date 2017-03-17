@@ -84,7 +84,7 @@ FIND_LIBRARY( SQLITE_LIBRARY sqlite3 )
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES EM_CORE
+  LIBRARIES em_core 
   CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
 )
