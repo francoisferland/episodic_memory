@@ -86,7 +86,7 @@ generate_messages(
 catkin_package(
 # INCLUDE_DIRS include
 #  LIBRARIES test
-#  CATKIN_DEPENDS roscpp
+   CATKIN_DEPENDS std_msgs message_runtime
 #  DEPENDS system_lib
 )
 

@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   egosphere_core
   roscpp
+  std_msgs
 )
 
 FIND_PACKAGE( Boost 1.46 COMPONENTS thread date_time REQUIRED )
@@ -86,7 +87,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES ${PROJECT_NAME}
-  CATKIN_DEPENDS roscpp egosphere_core
+  CATKIN_DEPENDS roscpp egosphere_core std_msgs message_runtime
 #  DEPENDS system_lib
 )
 
@@ -105,11 +106,47 @@ add_library(${PROJECT_NAME} src/egosphere.cpp src/info.cpp src/params.cpp)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
 add_dependencies(${PROJECT_NAME} ${PROJECT_NAME}_generate_messages_cpp)
 
-catkin_add_gtest(test_parameter_serializable test/test_parameter_serializable.cpp)
-target_link_libraries(test_parameter_serializable ${PROJECT_NAME})
+if(CATKIN_ENABLE_TESTING)
+    catkin_add_gtest(test_parameter_serializable test/test_parameter_serializable.cpp)
+    target_link_libraries(test_parameter_serializable ${PROJECT_NAME})
 
-add_executable(test_basic_node EXCLUDE_FROM_ALL test/basic_node.cpp)
-target_link_libraries(test_basic_node ${PROJECT_NAME})
+    add_executable(test_basic_node EXCLUDE_FROM_ALL test/basic_node.cpp)
+    target_link_libraries(test_basic_node ${PROJECT_NAME})
+endif()
 # rosbuild_add_gtest_build_flags(test_basic_node)
 # add_rostest(test/basic_node.launch)
 
+#############
+## Install ##
+#############
+
+# all install targets should use catkin DESTINATION variables
+# See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+
+## Mark executable scripts (Python etc.) for installation
+## in contrast to setup.py, you can choose the destination
+# install(PROGRAMS
+#   scripts/my_python_script
+#   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+# )
+
+## Mark executables and/or libraries for installation
+  install(TARGETS ${PROJECT_NAME}
+#   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
+
+## Mark cpp header files for installation
+  install(DIRECTORY include/${PROJECT_NAME}/
+    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+    FILES_MATCHING PATTERN "*.h"
+    PATTERN ".svn" EXCLUDE
+  )
+
+## Mark other files for installation (e.g. launch and bag files, etc.)
+# install(FILES
+#   # myfile1
+#   # myfile2
+#   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+# )

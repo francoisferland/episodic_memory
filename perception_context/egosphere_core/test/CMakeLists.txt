@@ -2,24 +2,27 @@
 # Library level unit tests
 ###########################################################
 
-# Fixes
-#   undefined reference to "pthread_getspecific"
-# This appeared on 12.04 / Fuerte
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+if(CATKIN_ENABLE_TESTING)
+    # Fixes
+    #   undefined reference to "pthread_getspecific"
+    # This appeared on 12.04 / Fuerte
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 
-catkin_add_gtest(test_parameter test_parameter.cpp)
+    catkin_add_gtest(test_parameter test_parameter.cpp)
 
-catkin_add_gtest(test_associations test_associations.cpp)
+    catkin_add_gtest(test_associations test_associations.cpp)
 
-catkin_add_gtest(test_iterator test_iterator.cpp)
+    catkin_add_gtest(test_iterator test_iterator.cpp)
 
-catkin_add_gtest(test_information test_information.cpp)
+    catkin_add_gtest(test_information test_information.cpp)
 
-catkin_add_gtest(test_egosphere test_egosphere.cpp)
+    catkin_add_gtest(test_egosphere test_egosphere.cpp)
 
-catkin_add_gtest(test_people_detection test_people_detection_sample.cpp)
+    catkin_add_gtest(test_people_detection test_people_detection_sample.cpp)
 
-#target_link_libraries(test_people_detection ${PROJECT_NAME})
+    #target_link_libraries(test_people_detection ${PROJECT_NAME})
+
+endif()
 
 ###########################################################
 # Node level unit tests
