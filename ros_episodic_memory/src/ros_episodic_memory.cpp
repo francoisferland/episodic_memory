@@ -5,7 +5,7 @@
 //#include <utilite/UtiLite.h>
 #include <boost/thread.hpp>
 
-#include <config.h>
+#include <episodic_memory_core/config.h>
 
 #include "episodicMemoryWrapperROS.h"
 #include "ros_episodic_memory/updatedWeight.h"

@@ -117,6 +117,20 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+SET(EPISODIC_MEMORY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+SET(EPISODIC_MEMORY_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemory.db)
+SET(EPISODIC_MEMORY_TEST_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemoryTest.db)
+
+# configure a header file to pass some of the CMake settings
+# to the source code
+CONFIGURE_FILE (
+  "${PROJECT_SOURCE_DIR}/config.h.in"
+  "${EPISODIC_MEMORY_INCLUDE_DIR}/config.h"
+  )
+  
+add_subdirectory("src")
+add_subdirectory("unit_test")
+
 #############
 ## Install ##
 #############
@@ -139,11 +153,11 @@ include_directories(
 # )
 
 ## Mark cpp header files for installation
-  install(DIRECTORY include/${PROJECT_NAME}/
-    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-    FILES_MATCHING PATTERN "*.h"
-    PATTERN ".svn" EXCLUDE
-  )
+install(DIRECTORY include/${PROJECT_NAME}/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+  FILES_MATCHING PATTERN "*.h"
+  PATTERN ".svn" EXCLUDE
+)
 
 ## Mark other files for installation (e.g. launch and bag files, etc.)
 # install(FILES
@@ -152,19 +166,6 @@ include_directories(
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
 
-SET(EPISODIC_MEMORY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
-SET(EPISODIC_MEMORY_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemory.db)
-SET(EPISODIC_MEMORY_TEST_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemoryTest.db)
-
-# configure a header file to pass some of the CMake settings
-# to the source code
-CONFIGURE_FILE (
-  "${PROJECT_SOURCE_DIR}/config.h.in"
-  "${EPISODIC_MEMORY_INCLUDE_DIR}/config.h"
-  )
-  
-add_subdirectory("src")
-add_subdirectory("unit_test")
 
 #############
 ## Testing ##
