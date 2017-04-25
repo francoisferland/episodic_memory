@@ -10,6 +10,10 @@ find_package(catkin REQUIRED COMPONENTS
   image_transport
   egosphere_ros
   roscpp
+  hbba_msgs
+  perception_context_msgs
+  egosphere_core
+  message_generation
 )
 
 find_package(OpenCV REQUIRED)
@@ -136,11 +140,11 @@ target_link_libraries(shortTermMemory
 # )
 
 ## Mark executables and/or libraries for installation
-# install(TARGETS test test_node
+  install(TARGETS shortTermMemory
 #   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
 #   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
-#   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
-# )
+    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+  )
 
 ## Mark cpp header files for installation
 # install(DIRECTORY include/${PROJECT_NAME}/
@@ -155,6 +159,10 @@ target_link_libraries(shortTermMemory
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+
+install(DIRECTORY launch
+DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
 #############
 ## Testing ##

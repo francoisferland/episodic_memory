@@ -148,6 +148,10 @@ public:
 		{
 			mode = EM_CORE::RECOGNIZING;
 		}
+    else
+    {
+      mode = EM_CORE::UNDEFINED;
+    }
 
 		return mode;
 	}
