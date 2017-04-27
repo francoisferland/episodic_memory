@@ -6,7 +6,7 @@
  */
 
 #include <QtGui>
-#include <myApp.h>
+#include <episodic_memory_viz/myApp.h>
 #include <ros/ros.h>
 #include <ros/time.h>
 #include <boost/thread.hpp>

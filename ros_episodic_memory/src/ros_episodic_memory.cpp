@@ -14,7 +14,7 @@
 #include "ros_episodic_memory/recalledEpisode.h"
 #include "ros_episodic_memory/categoryActivation.h"
 #include "perception_context_msgs/egosphereContent.h"
-#include "episodeLayer.h"
+#include "episodic_memory_core/episodeLayer.h"
 
 void connectQt(EM_CORE::EpisodicMemoryCorePtr emPtr, EpisodicMemoryWrapperROS * wrapper)
 {

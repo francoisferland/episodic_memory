@@ -6,8 +6,8 @@
 #include <std_msgs/String.h>
 #include <std_msgs/Bool.h>
 #include <std_srvs/Empty.h>
-#include <episodicMemoryCore.h>
-#include <episodeLayer.h>
+#include <episodic_memory_core/episodicMemoryCore.h>
+#include <episodic_memory_core/episodeLayer.h>
 #include "ros_episodic_memory/updatedWeight.h"
 #include "ros_episodic_memory/newCategory.h"
 #include "ros_episodic_memory/newChannel.h"
