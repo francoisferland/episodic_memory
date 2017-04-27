@@ -1,7 +1,7 @@
 #include "myApp.h"
 #include <networkvisualizer.h>
-#include <episodicMemoryCore.h>
-#include <config.h>
+#include <episodic_memory_core/episodicMemoryCore.h>
+#include <episodic_memory_core/config.h>
 
 using namespace EM_CORE;
 

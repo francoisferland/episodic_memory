@@ -11,7 +11,7 @@
 
 #include <boost/thread.hpp>
 
-#include <episodicMemoryCore.h>
+#include <episodic_memory_core/episodicMemoryCore.h>
 
 #define NEURON_WIDTH 35
 

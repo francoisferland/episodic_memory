@@ -129,9 +129,9 @@ add_subdirectory(test)
 # )
 
 ## Mark cpp header files for installation
-  install(DIRECTORY include/${PROJECT_NAME}/
-    DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
-    FILES_MATCHING PATTERN "*.h"
+  install(DIRECTORY include/egosphere/
+    DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/egosphere
+    FILES_MATCHING PATTERN "*.hpp"
     PATTERN ".svn" EXCLUDE
   )
 
