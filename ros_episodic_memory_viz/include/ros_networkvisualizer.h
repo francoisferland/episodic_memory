@@ -9,7 +9,7 @@
 #define ROS_NETWORKVISUALIZER_H_
 
 #include <QApplication>
-#include <networkvisualizer.h>
+#include <episodic_memory_viz/networkvisualizer.h>
 #include <ros/ros.h>
 #include <std_srvs/Empty.h>
 #include "ros_episodic_memory/updatedWeight.h"
