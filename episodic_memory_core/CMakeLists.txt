@@ -83,7 +83,7 @@ FIND_LIBRARY( SQLITE_LIBRARY sqlite3 )
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS include/
   LIBRARIES em_core 
   CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
@@ -98,6 +98,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  include/
 )
 
 ## Declare a cpp library
@@ -117,7 +118,7 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-SET(EPISODIC_MEMORY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+SET(EPISODIC_MEMORY_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include/episodic_memory_core)
 SET(EPISODIC_MEMORY_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemory.db)
 SET(EPISODIC_MEMORY_TEST_DATABASE_PATH ${PROJECT_SOURCE_DIR}/database/episodicMemoryTest.db)
 
@@ -153,7 +154,7 @@ add_subdirectory("src")
 # )
 
 ## Mark cpp header files for installation
-install(DIRECTORY include/
+install(DIRECTORY include/episodic_memory_core/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
   FILES_MATCHING PATTERN "*.h"
   PATTERN ".svn" EXCLUDE

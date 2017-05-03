@@ -1,4 +1,4 @@
-#include "episodicMemoryCore.h"
+#include "episodic_memory_core/episodicMemoryCore.h"
 
 EpisodicMemoryCore::EpisodicMemoryCore(const char** databasePath)
 {

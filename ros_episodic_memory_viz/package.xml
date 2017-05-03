@@ -40,6 +40,8 @@
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>episodic_memory_core</build_depend>
   <run_depend>episodic_memory_core</run_depend>
+  <build_depend>ros_episodic_memory</build_depend>
+  <run_depend>ros_episodic_memory</run_depend>
   <build_depend>episodic_memory_viz</build_depend>
   <run_depend>episodic_memory_viz</run_depend>
   <build_depend>hbba_msgs</build_depend>

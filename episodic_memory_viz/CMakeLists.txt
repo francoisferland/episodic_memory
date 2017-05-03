@@ -101,7 +101,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-SET(EPISODIC_MEMORY_VIZ_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+SET(EPISODIC_MEMORY_VIZ_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include/episodic_memory_viz)
 #SET( EXECUTABLE_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/bin )
 #SET( LIBRARY_OUTPUT_PATH  ${PROJECT_SOURCE_DIR}/libs )
 #SET ( EPISODIC_MEMORY_PATH ${PROJECT_SOURCE_DIR}/../episodic_memory_core )
@@ -169,7 +169,7 @@ TARGET_LINK_LIBRARIES(EpisodicMemoryVizLib
   )
 
 ## Mark cpp header files for installation
-  install(DIRECTORY include/
+  install(DIRECTORY include/episodic_memory_viz/
     DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
     FILES_MATCHING PATTERN "*.h"
     PATTERN ".svn" EXCLUDE

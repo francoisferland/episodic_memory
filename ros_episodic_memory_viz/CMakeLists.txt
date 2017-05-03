@@ -7,6 +7,7 @@ project(ros_episodic_memory_viz)
 find_package(catkin REQUIRED COMPONENTS
   episodic_memory_core
   episodic_memory_viz
+  ros_episodic_memory
   hbba_msgs
   roscpp
 )
